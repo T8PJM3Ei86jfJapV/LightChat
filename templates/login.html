@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=" A lightweight web-based chat based on websocket.">
+    <meta name="author" content="Rico Xie">
+
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ static_url("login/bootstrap.css") }}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{{ static_url("login/ie10-viewport-bug-workaround.css") }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ static_url("login/signin.css") }}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="{{ static_url("login/ie-emulation-modes-warning.js") }}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" action="/login" method="post">
+        <h2 class="form-signin-heading">Please Sign in</h2>
+        <label for="inputName" class="sr-only">Login name</label>
+        <input id="inputName" name="name" type="text" class="form-control" placeholder="Input your name here" required="" autofocus="">
+        <div class="checkbox" style="display:none">
+          <label>
+            <input value="remember-me" type="checkbox"> Remember me
+          </label>
+        </div>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        {% module xsrf_form_html() %}
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{ static_url("login/ie10-viewport-bug-workaround.js") }}"></script>
+  
+
+  </body>
+</html>
